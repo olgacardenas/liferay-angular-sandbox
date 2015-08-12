@@ -54,5 +54,14 @@ _sass_cache_*.css
 /tools/*/*/*/lib
 /tools/node*
 
-.metadata/*
+.metadata/*c
 /Servers/*
+*.war
+*.class
+*.metadata*
+*ext*.jar
+*.sublime-*
+*.idea
+.DS_Store
+karma-test-results.xml
+*.tern-project
