@@ -16,11 +16,11 @@
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
-						<!--goals>
+						<goals>
 							<goal>theme-merge</goal>
 							<goal>build-css</goal>
 							<goal>build-thumbnail</goal>
-						</goals-->
+						</goals>
 					</execution>
 				</executions>
 				<configuration>
@@ -88,7 +88,10 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<liferay.theme.parent>_styled</liferay.theme.parent>
+		<org.springframework.version>3.2.2.RELEASE</org.springframework.version>
+		<liferay.version>6.2.1</liferay.version>
+		<liferay.maven.plugin.version>6.2.1</liferay.maven.plugin.version>
+		<liferay.theme.parent>classic</liferay.theme.parent>
 		<liferay.theme.type>vm</liferay.theme.type>
 	</properties>
 </project>
