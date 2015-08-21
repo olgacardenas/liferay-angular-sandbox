@@ -11,15 +11,17 @@
     });
 
   // Modules
+  angular.module('copa.services', []);
+  angular.module('copa.controllers', []);
   angular.module('copa.directives', []);
   angular.module('copa.filters', []);
-  angular.module('copa.services', []);
   angular.module('copa',
     [
       'copa.config',
+      'copa.services',
+      'copa.controllers',
       'copa.directives',
       'copa.filters',
-      'copa.services',
       'ngResource',
       'ngCookies',
       'ngSanitize'
