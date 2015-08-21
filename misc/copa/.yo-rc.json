@@ -1,0 +1,28 @@
+{
+  "generator-angularjs-library": {
+    "props": {
+      "author": {
+        "name": "Olga Cardenas",
+        "email": "olgacardenas@seven4n.com"
+      },
+      "libraryName": {
+        "original": "copa",
+        "camelized": "copa",
+        "dasherized": "copa",
+        "slugified": "copa",
+        "parts": [
+          "copa"
+        ]
+      },
+      "includeModuleDirectives": true,
+      "includeModuleFilters": true,
+      "includeModuleServices": true,
+      "includeAngularModuleResource": true,
+      "includeAngularModuleCookies": true,
+      "includeAngularModuleSanitize": true,
+      "librarySrcDirectory": "src/copa",
+      "libraryUnitTestDirectory": "test/unit/copa",
+      "libraryUnitE2eDirectory": "test/e2e/copa"
+    }
+  }
+}
