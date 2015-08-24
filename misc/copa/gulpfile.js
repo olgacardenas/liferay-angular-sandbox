@@ -47,7 +47,7 @@ gulp.task('build', function() {
  * Process
  */
 gulp.task('process-all', function (done) {
-  runSequence('jshint', 'test-src', 'build', done);
+  runSequence('jshint', 'test-src', 'build', 'copy-to-liferay', done);
 });
 
 /**
@@ -98,6 +98,17 @@ gulp.task('test-dist-minified', function (done) {
     configFile: __dirname + '/karma-dist-minified.conf.js',
     singleRun: true
   }, done);
+});
+
+/**
+ * Copy all distribution files to liferay plugin project
+ */
+gulp.task('copy-to-liferay', function() {
+  gulp.src('./dist/copa.js')
+    .pipe(gulp.dest('../../themes/copa-theme/src/main/webapp/js'));
+
+  gulp.src('./dist/copa.min.js')
+    .pipe(gulp.dest('../../themes/copa-theme/src/main/webapp/js'));
 });
 
 gulp.task('default', function () {
