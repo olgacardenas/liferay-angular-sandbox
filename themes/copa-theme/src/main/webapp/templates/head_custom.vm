@@ -1,0 +1,13 @@
+#if ($minify)
+	<script src="/$theme_id/js/vendors/angular/angular.min.js"></script>
+	<script src="/$theme_id/js/vendors/angular-cookies/angular-cookies.min.js"></script>
+	<script src="/$theme_id/js/vendors/angular-resource/angular-resource.min.js"></script>
+	<script src="/$theme_id/js/vendors/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="/$theme_id/js/copa.min.js"></script>
+#else
+	<script src="/$theme_id/js/vendors/angular/angular.js"></script>
+	<script src="/$theme_id/js/vendors/angular-cookies/angular-cookies.js"></script>
+	<script src="/$theme_id/js/vendors/angular-resource/angular-resource.js"></script>
+	<script src="/$theme_id/js/vendors/angular-sanitize/angular-sanitize.js"></script>
+	<script src="/$theme_id/js/copa.js"></script>
+#end

@@ -6,20 +6,26 @@
 
 <head>
 	<title>$the_title - $company_name</title>
-
+	
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	
+	#parse ("$full_templates_path/head_custom.vm")
 
 	$theme.include($top_head_include)
 </head>
 
-<body class="$css_class">
+<body class="$css_class" ng-app="copa">
 
 <a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
 
 $theme.include($body_top_include)
 
 #dockbar()
-======================
+
+<div ng-controller="TestController">
+<p>{{myValue}}</p>
+</div>
+
 <div class="container-fluid" id="wrapper">
 	<header id="banner" role="banner">
 		<div id="heading">

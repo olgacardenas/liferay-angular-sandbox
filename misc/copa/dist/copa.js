@@ -30,6 +30,6 @@
 })(angular);
 
 angular.module('copa.controllers')
-  .controller('TestController', function TestController($scope) {
+  .controller('TestController', ['$scope', function ($scope) {
     $scope.myValue = 'some text';
-  });
+  }]);

@@ -14,6 +14,6 @@ describe('TestController', function() {
   });
 
   it("testing", function () {
-    expect($scope.myValue).toEqual('some text');
+
   });
 });
