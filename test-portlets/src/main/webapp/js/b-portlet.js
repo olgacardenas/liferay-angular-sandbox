@@ -1,1 +1,0 @@
-console.log("I'm a javascript inside the portlet B");

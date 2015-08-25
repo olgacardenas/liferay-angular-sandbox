@@ -20,7 +20,7 @@
 			/js/main.js
 		</footer-portlet-javascript>
 		<footer-portlet-javascript>
-			/js/b-portlet.js
+			/js/b-portlet.min.js
 		</footer-portlet-javascript>
 		<css-class-wrapper>portlet-b-portlet</css-class-wrapper>
 	</portlet>

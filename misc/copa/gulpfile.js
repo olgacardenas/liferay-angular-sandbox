@@ -18,10 +18,18 @@ var rootDirectory = path.resolve('./');
 // Source directory for build process
 var sourceDirectory = path.join(rootDirectory, './src');
 
+/*
+ * Section for global functionality
+ * ----------------------------------------------------
+ */
+
 var sourceFiles = [
 
   // Make sure module files are handled first
   path.join(sourceDirectory, '/**/*.module.js'),
+
+  // Ignore independent portlet files
+  path.join('!' + sourceDirectory, '/**/*-portlet.js'),
 
   // Then add all JavaScript files
   path.join(sourceDirectory, '/**/*.js')
@@ -41,22 +49,6 @@ gulp.task('build', function() {
     .pipe(uglify())
     .pipe(rename('copa.min.js'))
     .pipe(gulp.dest('./dist'));
-});
-
-/**
- * Process
- */
-gulp.task('process-all', function (done) {
-  runSequence('jshint', 'test-src', 'build', 'copy-to-liferay', done);
-});
-
-/**
- * Watch task
- */
-gulp.task('watch', function () {
-
-  // Watch JavaScript files
-  gulp.watch(sourceFiles, ['process-all']);
 });
 
 /**
@@ -101,16 +93,48 @@ gulp.task('test-dist-minified', function (done) {
 });
 
 /**
- * Copy all distribution files to liferay plugin project
+ * Copy distribution files to liferay theme
  */
-gulp.task('copy-to-liferay', function() {
+gulp.task('copy-to-theme', function() {
   gulp.src('./dist/copa.js')
     .pipe(gulp.dest('../../themes/copa-theme/src/main/webapp/js'));
-
   gulp.src('./dist/copa.min.js')
     .pipe(gulp.dest('../../themes/copa-theme/src/main/webapp/js'));
 });
 
+/**
+ * Section for individual portlet js
+ * ----------------------------------------------------
+ */
+
+//Proof of concept: B portlet
+gulp.task('build-b-portlet', function() {
+  gulp.src(path.join(sourceDirectory, '/**/b-portlet.js'))
+    .pipe(plumber())
+    .pipe(concat('b-portlet.js'))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(uglify())
+    .pipe(rename('b-portlet.min.js'))
+    .pipe(gulp.dest('./dist'));
+});
+gulp.task('copy-to-b-portlet', function() {
+  gulp.src('./dist/b-portlet.min.js')
+    .pipe(gulp.dest('../../portlets/test-portlets/src/main/webapp/js'));
+});
+
+/**
+ * All
+ * ----------------------------------------------------
+ */
+
+gulp.task('copy-to-liferay', function (done) {
+  runSequence('copy-to-theme', 'copy-to-b-portlet', done);
+});
+
+gulp.task('process-all', function (done) {
+  runSequence('jshint', 'test-src', 'build', 'build-b-portlet', 'copy-to-liferay', done);
+});
+
 gulp.task('default', function () {
-  runSequence('process-all', 'watch');
+  runSequence('process-all');
 });
