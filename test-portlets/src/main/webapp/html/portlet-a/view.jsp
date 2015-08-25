@@ -3,3 +3,7 @@
 <portlet:defineObjects />
 
 This is the <b>Portlet A</b> portlet in View mode.
+
+<div ng-controller="PortletACtrl">
+{{myValueA}}
+</div>
