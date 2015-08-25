@@ -22,7 +22,7 @@ $theme.include($body_top_include)
 
 #dockbar()
 
-<div ng-controller="TestController">
+<div ng-controller="TestAllSiteController">
 <p>{{myValue}}</p>
 </div>
 

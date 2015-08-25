@@ -4,6 +4,6 @@
 
 This is the <b>Portlet A</b> portlet in View mode.
 
-<div ng-controller="PortletACtrl">
-{{myValueA}}
+<div ng-controller="TestPortletsCtrl">
+{{myValue}}
 </div>

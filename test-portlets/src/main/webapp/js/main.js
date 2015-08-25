@@ -1,4 +1,4 @@
 angular.module('copa.controllers')
-.controller('PortletACtrl', ['$scope', function ($scope) {
-  $scope.myValueA = 'some text A';
+.controller('TestPortletsCtrl', ['$scope', function ($scope) {
+  $scope.myValue = 'This is an angular text for Several Portlets';
 }]);

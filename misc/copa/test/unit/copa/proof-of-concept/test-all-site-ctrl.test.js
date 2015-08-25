@@ -1,4 +1,4 @@
-describe('TestController', function() {
+describe('Controller for all site', function() {
   var $controller;
   var $scope, controller;
 
@@ -10,10 +10,10 @@ describe('TestController', function() {
 
   beforeEach(function () {
     $scope = {};
-    controller = $controller('TestController', {$scope: $scope});
+    controller = $controller('TestAllSiteController', {$scope: $scope});
   });
 
   it("testing", function () {
-
+    expect($scope.myValue.length).toBeGreaterThan(0);
   });
 });
