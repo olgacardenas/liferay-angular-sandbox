@@ -65,3 +65,5 @@ _sass_cache_*.css
 .DS_Store
 karma-test-results.xml
 *.tern-project
+
+misc/*/coverage
