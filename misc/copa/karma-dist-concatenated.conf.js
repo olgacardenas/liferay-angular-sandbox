@@ -21,6 +21,7 @@ module.exports = function(config) {
       'bower/angular-sanitize/angular-sanitize.js',
       'bower/angular-mocks/angular-mocks.js',
       'dist/copa.js',
+      'dist/*-portlet.js',
       'test/unit/**/*.js'
     ],
 

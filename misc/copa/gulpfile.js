@@ -87,6 +87,13 @@ gulp.task('build-b-portlet', function() {
  * ----------------------------------------------------
  */
 
+var allSourceFiles = [bPortletSourceFiles].concat(themeSourceFiles);
+
+// Watch task
+gulp.task('watch', function () {
+  gulp.watch(sourceFiles, ['process-all']);
+});
+
 // Validate source JavaScript
 var lintFiles = [
   'gulpfile.js',
@@ -109,5 +116,5 @@ gulp.task('process-all', function (done) {
 
 // Make default
 gulp.task('default', function () {
-  runSequence('process-all');
+  runSequence('process-all', 'watch');
 });
